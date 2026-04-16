@@ -1,56 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-<!-- meta -->
-<meta charset="UTF-8" />
+    <head>
+        <!-- meta -->
+        <meta charset="UTF-8" />
 
-<!-- link -->
-<link href="css/reset.css" rel="stylesheet">
-<link href="css/common.css" rel="stylesheet">
+        <!-- link -->
+        <link href="css/reset.css" rel="stylesheet" />
+        <link href="css/common.css" rel="stylesheet" />
 
-<link href="css/kadai01.css" rel="stylesheet">
+        <link href="css/kadai01.css" rel="stylesheet" />
 
-<!-- web font for google -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
-<!-- Material icons for google -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <!-- web font for google -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica" />
+        <!-- Material icons for google -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
-<title>kadai01 - JavaScript2</title>
+        <title>kadai01 - JavaScript2</title>
 
-</head>
-<body>
+        <script defer src="js/kadai01.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1 id="logo">jQuery Method</h1>
+            </header>
 
-<div id="wrapper">
-  <header>
-    <h1 id="logo">jQuery Method</h1>
-  </header>
+            <div id="content-wrap">
+                <div id="char-view-col">
+                    <div id="img-field">
+                        <img src="img/img_kadai02_000.jpg" alt="" />
+                    </div>
+                    <!-- /#img-field -->
 
-  <div id="content-wrap">
-    <div id="char-view-col">
-      <div id="img-field">
-        <img src="img/img_kadai02_000.jpg" alt="">
-      </div><!-- /#img-field -->
-      
-      <div id="char-list">
-        <button type="button" class="set-btn" data-name="img_kadai02_char01" data-ex="png">charcter1</button>
-        <button type="button" class="set-btn" data-name="img_kadai02_char02" data-ex="png">charcter2</button>
-        <button type="button" class="set-btn" data-name="img_kadai02_char03" data-ex="png">charcter3</button>
-        <button type="button" class="clear-btn">clear</button>
-      </div>
-      
-    </div><!-- /#char_view_col -->
-  </div><!-- /#content-wrap -->
+                    <div id="char-list">
+                        <button
+                            type="button"
+                            class="set-btn"
+                            data-name="img_kadai02_char01"
+                            data-ex="png"
+                        >
+                            charcter1
+                        </button>
+                        <button
+                            type="button"
+                            class="set-btn"
+                            data-name="img_kadai02_char02"
+                            data-ex="png"
+                        >
+                            charcter2
+                        </button>
+                        <button
+                            type="button"
+                            class="set-btn"
+                            data-name="img_kadai02_char03"
+                            data-ex="png"
+                        >
+                            charcter3
+                        </button>
+                        <button type="button" class="clear-btn">clear</button>
+                    </div>
+                </div>
+                <!-- /#char_view_col -->
+            </div>
+            <!-- /#content-wrap -->
 
-  <footer>
-    <div id="top-area"><a href="#wrapper"><i class="material-icons">keyboard_arrow_up</i></a></div>
-    <p id="copyright" class="font-weight-b"><small>copyright &copy; <span id="year">2020</span> ECC Design Collage</small></p>
-  </footer>
-  
-</div><!-- /#wrapper -->
+            <footer>
+                <div id="top-area">
+                    <a href="#wrapper"><i class="material-icons">keyboard_arrow_up</i></a>
+                </div>
+                <p id="copyright" class="font-weight-b">
+                    <small>copyright &copy; <span id="year">2020</span> ECC Design Collage</small>
+                </p>
+            </footer>
+        </div>
+        <!-- /#wrapper -->
 
-<!-- script -->
-<script src="js/jquery-3.6.0.min.js"></script>
-<script src="js/common.js"></script>
-
-</body>
+        <!-- script -->
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/common.js"></script>
+    </body>
 </html>
