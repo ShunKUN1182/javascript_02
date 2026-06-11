@@ -22,7 +22,7 @@ saveButton.addEventListener("click", () => {
         storageValue.push(keyword);
         // 配列をJSONフォーマットへ変換
         storageValue = JSON.stringify(storageValue);
-        localStorage.setItem(storageKey, keyword);
+        localStorage.setItem(storageKey, storageValue);
         console.log(storageValue);
     }
 });
