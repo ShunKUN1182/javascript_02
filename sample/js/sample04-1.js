@@ -5,7 +5,6 @@ let storageValue = localStorage.getItem(storageKey) || [];
 // if (localStorage.getItem(storageKey)) {
 //     storageValue = localStorage.getItem(storageKey);
 // }
-
 // localStorage.setItem(storageKey, Temporal.Now.plainDateTimeISO());
 
 console.log(storageValue);
