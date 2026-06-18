@@ -41,10 +41,24 @@ submitBtn.addEventListener("click", (e) => {
     removeBtns = document.querySelectorAll(".remove");
 });
 
-removeBtns.forEach((e) => {
-    e.addEventListener("click", () => {
-        console.log("aiueo");
-
-        e.closest("tr").remove();
-    });
+tbody.addEventListener("click", (e) => {
+    if (!e.target.classList.contains("remove")) return;
+    const tr = e.target.closest("tr");
+    const index = [...tbody.children].indexOf(tr);
+    storageValue.splice(index, 1);
+    localStorage.setItem(storageKey, JSON.stringify(storageValue));
+    tr.remove();
 });
+
+// removeTsk(removeBtns);
+
+// function removeTsk(removeBtns) {
+//     removeBtns.forEach((e, i) => {
+//         e.addEventListener("click", () => {
+//             storageValue.splice(i, 1);
+//             localStorage.setItem(storageKey, JSON.stringify(storageValue));
+//             storageValue = JSON.parse(localStorage.getItem(storageKey)) || [];
+//             e.closest("tr").remove();
+//         });
+//     });
+// }
