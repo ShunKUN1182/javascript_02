@@ -5,13 +5,28 @@ const storageKey = "kadai04";
 let storageValue = JSON.parse(localStorage.getItem(storageKey)) || [];
 console.log(storageValue);
 
+storageValue.forEach((e) => {
+    tbody.insertAdjacentHTML(
+        "beforeend",
+        `
+        <tr>
+          <td class="comment">${e}</td>
+          <td class="control">
+            <button type="button" class="remove">削除</button>
+          </td>
+        </tr>
+      `,
+    );
+});
+
+let removeBtns = document.querySelectorAll(".remove");
+
 submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
     if (!inputText.value) return;
 
     storageValue.push(inputText.value);
-    JSON.stringify(storageValue);
-    localStorage.setItem(storageKey, storageValue);
+    localStorage.setItem(storageKey, JSON.stringify(storageValue));
     tbody.insertAdjacentHTML(
         "beforeend",
         `
@@ -23,12 +38,13 @@ submitBtn.addEventListener("click", (e) => {
           </tr>
         `,
     );
+    removeBtns = document.querySelectorAll(".remove");
+});
 
-    const removeBtns = document.querySelectorAll(".remove");
+removeBtns.forEach((e) => {
+    e.addEventListener("click", () => {
+        console.log("aiueo");
 
-    removeBtns.forEach((e) => {
-        e.addEventListener("click", () => {
-            e.closest("tr").remove();
-        });
+        e.closest("tr").remove();
     });
 });
