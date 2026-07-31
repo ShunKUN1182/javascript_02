@@ -46,6 +46,12 @@ todo.addEventListener("click", async (e) => {
         if (!(await confirm.show("このアイテムを削除しますか？"))) {
             return;
         }
-        todoItemWrap.remove();
+        todoItemWrap.classList.add("📝--👻");
+        todoItemWrap.addEventListener("transitionend", (e) => {
+            console.log(e);
+            if (e.propertyName === "opacity") {
+                todoItemWrap.remove();
+            }
+        });
     }
 });
