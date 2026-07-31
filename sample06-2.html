@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>JavaScript２</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic&family=M+PLUS+1:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Google Fonts for icon -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete"
+        />
+
+        <script type="module" defer src="js/sample06-2.js"></script>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            *::before,
+            *::after {
+                box-sizing: inherit;
+            }
+            input,
+            textarea,
+            select,
+            button {
+                appearance: none;
+            }
+            button {
+                cursor: pointer;
+            }
+            body {
+                color: #111;
+                background-color: oklch(98.4% 0.003 247.858);
+                font-family: "M PLUS 1", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 400;
+                font-style: normal;
+                margin: 0;
+            }
+            .container {
+                width: 100%;
+                min-width: 360px;
+                padding-inline: 12px;
+                padding-block: 20px;
+                margin-inline: auto;
+            }
+            .📝 {
+                display: flex;
+                flex-direction: column;
+                gap: 26px;
+                width: 100%;
+
+                .📝__📄 {
+                    width: 100%;
+                    background-color: #fcfcfc;
+                    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+                    padding: 14px;
+                    border-radius: 6px;
+                    transition:
+                        box-shadow 0.3s ease,
+                        opacity 0.2s ease-in-out,
+                        transform 0.2s ease-in-out;
+
+                    &.📝--👻 {
+                        opacity: 0;
+                        transform: translate(0, -25%);
+                    }
+                    &:hover {
+                        background-color: #fff;
+                        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+                    }
+
+                    .📝__🔠 {
+                        font-family: "BIZ UDGothic", sans-serif;
+                    }
+
+                    .📝__🎛️ {
+                        display: flex;
+                        justify-content: flex-end;
+                    }
+                    .📝__🗑️ {
+                        background-color: oklch(58.6% 0.253 17.585);
+                        color: #fff;
+                        text-transform: uppercase;
+                        padding-inline: 8px;
+                        padding-block: 6px;
+                        border: none;
+                        border-radius: 6px;
+
+                        &:hover {
+                            background-color: oklch(64.5% 0.246 16.439);
+                        }
+                    }
+                }
+            }
+
+            .🪟 {
+                z-index: 999;
+                /* transform: translate(0, -50%); */
+
+                &:modal {
+                    width: 70%;
+                    border: none;
+                }
+                &::backdrop {
+                    background-color: rgba(0, 0, 0, 0.35);
+                }
+                .🪟__🎛️ {
+                    display: flex;
+                    justify-content: flex-end;
+                    gap: 12px;
+                }
+                .🪟__🔘 {
+                    color: #fff;
+                    background-color: #111;
+                    text-transform: uppercase;
+                    padding-inline: 8px;
+                    padding-block: 6px;
+                    border-radius: 6px;
+                    border: none;
+
+                    &:hover {
+                        background-color: #333;
+                    }
+                }
+            }
+
+            @media screen and (width >= 640px) {
+                .container {
+                    max-width: 640px;
+                }
+            }
+            @media screen and (width >= 768px) {
+                .container {
+                    max-width: 768px;
+                }
+            }
+            @media screen and (width >= 1024px) {
+                .container {
+                    max-width: 1024px;
+                }
+            }
+            @media screen and (width >= 1280px) {
+                .container {
+                    max-width: 1280px;
+                }
+            }
+            @media screen and (width >= 1536px) {
+                .container {
+                    max-width: 1536px;
+                }
+            }
+
+            /*
+sm  @media (width >= 640px) { ... }
+md  @media (width >= 768px) { ... }
+lg  @media (width >= 1024px) { ... }
+xl  @media (width >= 1280px) { ... }
+2xl @media (width >= 1536px) { ... }
+*/
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="📝">
+                <div class="📝__📄">
+                    <h2 class="📝__🔠">JavaScript</h2>
+                    <p class="📝__💬">
+                        Promiseを活用した同期処理で独自のアラートやコンファームを実装する
+                    </p>
+                    <div class="📝__🎛️">
+                        <button type="button" class="📝__🗑️">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="📝__📄">
+                    <h2 class="📝__🔠">クリエイティブワーク</h2>
+                    <p class="📝__💬">非同期通信でAPIからのデータで画面構成を作る</p>
+                    <div class="📝__🎛️">
+                        <button type="button" class="📝__🗑️">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="📝__📄">
+                    <h2 class="📝__🔠">クリエイティブワーク</h2>
+                    <p class="📝__💬">WebAPIのデータ一覧を返す部分を構築する</p>
+                    <div class="📝__🎛️">
+                        <button type="button" class="📝__🗑️">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="📝__📄">
+                    <h2 class="📝__🔠">クリエイティブワーク</h2>
+                    <p class="📝__💬">WebAPIの新規登録と編集部分を構築する</p>
+                    <div class="📝__🎛️">
+                        <button type="button" class="📝__🗑️">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="📝__📄">
+                    <h2 class="📝__🔠">クリエティブワーク</h2>
+                    <p class="📝__💬">新規登録と編集画面の作成とAPI連携の部分を構築する</p>
+                    <div class="📝__🎛️">
+                        <button type="button" class="📝__🗑️">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <dialog class="🪟">
+            <p class="🪟__💬">ダイアログメッセージ</p>
+            <div class="🪟__🎛️">
+                <button type="button" class="🪟__🔘 🪟__🔘--❌">cancel</button>
+                <button type="button" class="🪟__🔘 🪟__🔘--✅">ok</button>
+            </div>
+        </dialog>
+    </body>
+</html>
