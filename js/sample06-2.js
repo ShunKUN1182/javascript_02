@@ -10,16 +10,24 @@ const createConfirm = (modal) => {
         return new Promise((resolve) => {
             // ダイアログのOKボタンをクリックした時
             const okBtn = modal.querySelector(".🪟__🔘--✅");
-            okBtn.addEventListener("click", () => {
-                modal.close();
-                resolve(true);
-            });
+            okBtn.addEventListener(
+                "click",
+                () => {
+                    modal.close();
+                    resolve(true);
+                },
+                { once: true },
+            );
             //ダイアログのキャンセルボタンをクリック
             const ngBtn = modal.querySelector(".🪟__🔘--❌");
-            ngBtn.addEventListener("click", () => {
-                modal.close();
-                resolve(false);
-            });
+            ngBtn.addEventListener(
+                "click",
+                () => {
+                    modal.close();
+                    resolve(false);
+                },
+                { once: true },
+            );
         });
     };
 
@@ -27,7 +35,7 @@ const createConfirm = (modal) => {
 };
 const confirm = createConfirm(modal);
 
-todo.addEventListener("click", (e) => {
+todo.addEventListener("click", async (e) => {
     const element = e.target;
 
     if (
@@ -35,6 +43,9 @@ todo.addEventListener("click", (e) => {
         element.classList.contains("material-symbols-outlined")
     ) {
         const todoItemWrap = element.closest(".📝__📄");
-        confirm.show("このアイテムを削除しますか？");
+        if (!(await confirm.show("このアイテムを削除しますか？"))) {
+            return;
+        }
+        todoItemWrap.remove();
     }
 });
